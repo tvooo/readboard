@@ -1,0 +1,14 @@
+%header {
+    @extend %box;
+
+    padding: 2em 0;
+
+    .header-title {
+        font-size: 2em;
+    }
+
+}
+
+.header {
+    @extend %header;
+}

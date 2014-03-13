@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" ng-app="readboardApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Readboard</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+    <script type="text/javascript" src="//use.typekit.net/dxp4bgl.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/dxp4bgl.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/pinboard.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/goodies.js"></script>
+</head>
+<body ng-controller="ReadboardCtrl" ng-keyup="keyPress( $event )">
+    <header class="header" ng-hide="active">
+        <h2 class="header-title">Readboard</h2>
+    </header>
+
+    <nav class="postlist" ng-hide="active">
+        <div>
+            Sort by <a href="" ng-click="setOrder('time')">Date</a> | <a href="" ng-click="setOrder('readingtime')">Reading time</a>
+        </div>
+        <ul class="posts">
+            <li ng-repeat="post in unread | orderBy:orderProperty:orderDirection" ng-click="setActive( post )" class="post" ng-class="{'is-disabled': post.content == null}">
+                <div class="post-image">
+                    <img src="thumbnails/{{post.hash}}.png" alt="">
+                </div>
+                <div class="post-text">
+                    <a href="#" class="post-title"><h2>{{post.description}}</h2></a>
+                    <span class="post-meta">{{post.site}}</span>
+                    <span class="post-meta">{{post.readingtime | readingtime}}</span>
+                </div>
+
+            </li>
+        </ul>
+    </nav>
+
+    <nav ng-show="active" class="nav">
+        <div class="nav-panel">
+        <div class="nav-panel-content">
+            <a href="#" ng-click="setActive(null)">Back to Reading List</a>
+        </div>
+        </div>
+
+    </nav>
+
+    <article class="article" ng-show="active">
+        <h1 class="article-title">{{active.description}}</h1>
+        <section class="article-content" ng-bind-html="active.content">
+
+        </section>
+    </article>
+</body>
+</html>

@@ -1,0 +1,47 @@
+%postlist {
+    @extend %box;
+
+    .post {
+        @extend %box;
+        margin-bottom: 4em;
+
+        background: #f0f0f0;
+
+        .post-image {
+            @include span(3);
+
+            padding: .5em;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .post-text {
+            @include span(9);
+        }
+
+        .post-title {
+
+            text-decoration: none;
+
+            h2 {
+                font-weight: 400;
+            }
+        }
+
+        .post-meta {
+
+        }
+
+        &.is-disabled {
+            a {
+                color: $color-link-disabled;
+            }
+        }
+    }
+}
+
+.postlist {
+    @extend %postlist;
+}

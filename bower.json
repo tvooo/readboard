@@ -1,0 +1,25 @@
+{
+  "name": "readboard",
+  "main": "index.html",
+  "version": "0.1.0",
+  "authors": [
+    "Tim von Oldenburg <tim@tvooo.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.14",
+    "angular-resource": "~1.2.14",
+    "jquery": "~2.1.0",
+    "paws": "~1.0.1",
+    "type.scss": "~0.1.0",
+    "angular-sanitize": "~1.2.14"
+  }
+}

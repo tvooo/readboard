@@ -1,0 +1,18 @@
+%article {
+    @extend %box;
+    padding-top: 8em;
+    padding-bottom: 8em;
+
+    .article-title {
+        margin-bottom: 2em;
+    }
+
+    .article-content {
+        @extend %content;
+    }
+}
+
+
+.article {
+    @extend %article;
+}

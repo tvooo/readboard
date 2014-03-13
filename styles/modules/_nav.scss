@@ -1,0 +1,24 @@
+%nav {
+    position: fixed;
+    background-color: #ddd;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .nav-panel {
+        @extend %box;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        .nav-panel-content {
+            @include span(12);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.nav {
+    @extend %nav;
+}

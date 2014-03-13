@@ -1,0 +1,129 @@
+$ff-sans: "brandon-grotesque", sans-serif;
+$ff-serif: "ff-tisa-web-pro", Georgia, serif;
+$ff-mono: "courier-prime","source-code-pro", monospace;
+
+%paragraph {
+    font-size: 1em;
+    line-height: 1.72em;
+
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    @include font-feature-settings("onum" 1, "pnum" 1);
+}
+
+//@include type-boilerplate;
+
+html {
+    font-size: 24px;
+}
+
+body {
+    font-size: 100%;
+    color: $color-text;
+    font-family: $ff-serif;
+}
+
+/* HEADINGS */
+
+$headings:
+    h1 2em 1.1em,
+    h2 1.6em 1.4em,
+    h3 1.4em 1.61em,
+    h4 1em 1.61em;
+@each $heading in $headings {
+     #{nth($heading, 1)} {
+        font-size: nth($heading, 2);
+        line-height: nth($heading, 3);
+    }
+}
+
+/* TABLES */
+
+table {
+    @include font-feature-settings("lnum" 1, "tnum" 1);
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+
+/* QUOTES */
+
+blockquote {
+    @include type-quotemarks-none;
+
+
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+
+
+a {
+    color: $color-link;
+}
+
+%content {
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    p, li {
+        line-height: 1.5em;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    li {
+        margin-bottom: .6em;
+    }
+
+    h2, h3, h4, h5, h6 {
+        margin-bottom: .5em;
+    }
+
+    ul, ol {
+        padding-left: 0;
+        list-style-position: outside;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: number;
+    }
+
+    /* CODE */
+
+    code {
+        @extend %type-code;
+        font-family: $ff-mono;
+        display: inline-block;
+    }
+
+    pre {
+        @extend %type-code;
+        font-family: $ff-mono;
+        display: block;
+        padding: 2em;
+        margin-bottom: 2em;
+        code {
+            display: block;
+        }
+    }
+}
