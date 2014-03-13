@@ -90,7 +90,8 @@ function getMarkup( post, callback ) {
 
 function getScreenshot( post, callback ) {
     console.log( "Get screenshot for " + post.description );
-    webshot(post.href, 'thumbnails/' + post.hash + '.png', {
+    var filename = 'thumbnails/' + post.hash + '.png';
+    webshot(post.href, filename, {
         screenSize: {
             width: 1024,
             height: 1024
@@ -101,6 +102,7 @@ function getScreenshot( post, callback ) {
             console.error( err );
             return callback( null, post );
         }
+        post.thumbnail = filename;
         return callback( null, post );
     });
 }

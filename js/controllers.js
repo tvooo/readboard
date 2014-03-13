@@ -33,4 +33,19 @@ angular.module('readboardFilters', []).
             return [minutes, seconds].join(':');
 
         };
+    }).filter('nicereadingtime', function () {
+        return function (text) {
+            if ( !text ) {
+                return "";
+            }
+            var time = parseFloat( text );
+            if ( time < 1 ) {
+                return "Less than a minute"
+            }
+            var roundedTime = Math.round( time );
+            if ( roundedTime === 1 ) {
+                return "About a minute";
+            }
+            return "~" + roundedTime + " minutes";
+        };
     });

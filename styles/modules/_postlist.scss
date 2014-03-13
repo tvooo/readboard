@@ -1,11 +1,15 @@
 %postlist {
     @extend %box;
 
+    .postlist-order {
+        margin-bottom: 2em;
+    }
+
     .post {
         @extend %box;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
 
-        background: #f0f0f0;
+        background: #f6f6f6;
 
         .post-image {
             @include span(3);
@@ -27,11 +31,13 @@
 
             h2 {
                 font-weight: 400;
+                line-height: 1.15em;
             }
         }
 
         .post-meta {
-
+            font-size: .8em;
+            color: #999;
         }
 
         &.is-disabled {

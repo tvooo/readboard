@@ -17,7 +17,7 @@ ul, ol {
 
 /* line 10, ../../bower_components/paws/sass/_paws.scss */
 .box, .postlist, .postlist .post, .header, .article, .nav .nav-panel {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
@@ -304,11 +304,15 @@ a {
 }
 
 /* line 4, ../../styles/modules/_postlist.scss */
-.postlist .post {
-  margin-bottom: 4em;
-  background: #f0f0f0;
+.postlist .postlist-order {
+  margin-bottom: 2em;
 }
-/* line 10, ../../styles/modules/_postlist.scss */
+/* line 8, ../../styles/modules/_postlist.scss */
+.postlist .post {
+  margin-bottom: 2em;
+  background: #f6f6f6;
+}
+/* line 14, ../../styles/modules/_postlist.scss */
 .postlist .post .post-image {
   float: left;
   width: 24%;
@@ -316,26 +320,32 @@ a {
   margin-right: 0.5%;
   padding: .5em;
 }
-/* line 15, ../../styles/modules/_postlist.scss */
+/* line 19, ../../styles/modules/_postlist.scss */
 .postlist .post .post-image img {
   width: 100%;
 }
-/* line 20, ../../styles/modules/_postlist.scss */
+/* line 24, ../../styles/modules/_postlist.scss */
 .postlist .post .post-text {
   float: left;
   width: 74%;
   margin-left: 0.5%;
   margin-right: 0.5%;
 }
-/* line 24, ../../styles/modules/_postlist.scss */
+/* line 28, ../../styles/modules/_postlist.scss */
 .postlist .post .post-title {
   text-decoration: none;
 }
-/* line 28, ../../styles/modules/_postlist.scss */
+/* line 32, ../../styles/modules/_postlist.scss */
 .postlist .post .post-title h2 {
   font-weight: 400;
+  line-height: 1.15em;
 }
 /* line 38, ../../styles/modules/_postlist.scss */
+.postlist .post .post-meta {
+  font-size: .8em;
+  color: #999;
+}
+/* line 44, ../../styles/modules/_postlist.scss */
 .postlist .post.is-disabled a {
   color: #aaaaaa;
 }

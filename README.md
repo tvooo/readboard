@@ -4,6 +4,10 @@
 
 Readboard is a reading client for Pinboard "to read" bookmarks, comparable to Pocket or Readability.
 
+![The post list](shot-list.png)
+
+![Reading an article](shot-article.png)
+
 ## Setup
 
 1. `npm install && bower install`

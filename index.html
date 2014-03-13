@@ -27,18 +27,18 @@
     </header>
 
     <nav class="postlist" ng-hide="active">
-        <div>
+        <div class="postlist-order">
             Sort by <a href="" ng-click="setOrder('time')">Date</a> | <a href="" ng-click="setOrder('readingtime')">Reading time</a>
         </div>
         <ul class="posts">
             <li ng-repeat="post in unread | orderBy:orderProperty:orderDirection" ng-click="setActive( post )" class="post" ng-class="{'is-disabled': post.content == null}">
                 <div class="post-image">
-                    <img src="thumbnails/{{post.hash}}.png" alt="">
+                    <img src="{{post.thumbnail}}" alt="" ng-show="post.thumbnail">
                 </div>
                 <div class="post-text">
                     <a href="#" class="post-title"><h2>{{post.description}}</h2></a>
-                    <span class="post-meta">{{post.site}}</span>
-                    <span class="post-meta">{{post.readingtime | readingtime}}</span>
+                    <p class="post-meta">{{post.site}}</p>
+                    <p class="post-meta">{{post.readingtime | nicereadingtime}}</p>
                 </div>
 
             </li>
