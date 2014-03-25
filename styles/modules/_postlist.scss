@@ -2,19 +2,31 @@
     @extend %box;
 
     .postlist-order {
-        margin-bottom: 2em;
+        @include span(12);
+        margin-bottom: .5em;
     }
 
-    .post {
-        @extend %box;
+    .postlist-view {
+        @include span(12);
+        //text-align: right;
+        margin-bottom: 2em;
+        font-size: 3em;
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+%post {
+    @extend %box;
         margin-bottom: 2em;
 
-        background: #f6f6f6;
-
         .post-image {
-            @include span(3);
+            @include span(2);
 
-            padding: .5em;
+            //padding: .5em;
+            min-height: 1em;
 
             img {
                 width: 100%;
@@ -22,17 +34,15 @@
         }
 
         .post-text {
-            @include span(9);
+            @include span(10);
         }
 
         .post-title {
+            //@include span(12);
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 1.15em;
 
-            text-decoration: none;
-
-            h2 {
-                font-weight: 400;
-                line-height: 1.15em;
-            }
         }
 
         .post-meta {
@@ -45,7 +55,10 @@
                 color: $color-link-disabled;
             }
         }
-    }
+}
+
+.post {
+    @extend %post;
 }
 
 .postlist {

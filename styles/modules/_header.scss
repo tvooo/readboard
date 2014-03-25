@@ -4,7 +4,9 @@
     padding: 2em 0;
 
     .header-title {
+        @include span(12);
         font-size: 2em;
+        font-weight: 400;
     }
 
 }

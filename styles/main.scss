@@ -4,15 +4,16 @@
 @import "colors";
 
 
-$max-width: 1200px;
+$max-width: 1000px;
 $columns: 12;
-$gutter: 1%;
+$gutter: 3%;
 @import "../bower_components/paws/sass/paws";
 @include paws-generate;
 @import "../bower_components/type.scss/type";
 
 
 @import "typography";
+@import "entypo";
 
 // Modules
 @import "modules/postlist";
