@@ -1,8 +1,8 @@
 var readboardApp = angular.module('readboardApp', ['readboardServices', 'ngSanitize', 'readboardFilters']);
 
-readboardApp.controller('ReadboardCtrl', function ($scope, $filter, Articles) {
+readboardApp.controller('ReadboardCtrl', function ($scope, $filter, Articles, DoneReading) {
     $scope.articles = Articles.query( {}, function( res ) {
-        $scope.unread = $filter('filter')($scope.articles, {'toread': 'yes'});
+        //$scope.unread = $filter('filter')($scope.articles, {'toread': 'yes'});
     });
 
     $scope.setActive = function( article ) {
@@ -18,6 +18,10 @@ readboardApp.controller('ReadboardCtrl', function ($scope, $filter, Articles) {
         if ( 27 === event.keyCode ) {
             $scope.setActive( null );
         }
+    };
+
+    $scope.markAsRead = function( hash ) {
+        DoneReading.query( {hash: hash}, function( res ) {});
     };
 });
 

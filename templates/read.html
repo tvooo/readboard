@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="readboardApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Readboard</title>
+    <link rel="stylesheet" href="/assets/styles/main.css">
+
+    <script type="text/javascript" src="//use.typekit.net/dxp4bgl.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/dxp4bgl.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="/js/services.js"></script>
+    <!--<script type="text/javascript" src="/js/directives.js"></script>-->
+    <script type="text/javascript" src="/js/controllers.js"></script>
+    <!--<script type="text/javascript" src="/js/goodies.js"></script>-->
+</head>
+<body ng-controller="ReadboardCtrl" ng-keyup="keyPress( $event )">
+
+    <nav class="nav">
+        <div class="nav-panel">
+        <div class="nav-panel-content">
+            <a href="/">Back to Reading List</a> |&nbsp;
+            <a href="{{active.href}}" target="_blank">Original</a>
+            <a href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event('squirt.again'));}else{sq=window.sq||{};sq.version='0.2.0';sq.host='//squirt.io';sq.userId='ec6fd873-ac35-4d64-96d0-ef880c3c21d2';sq.j=document.createElement('script');sq.j.src=sq.host+'/bm/squirt.js';document.body.appendChild(sq.j);}})();">Squirt</a>
+            <a href="#" ng-click="enrich(<%= active.hash %>)">()</a>
+            <a href="/enrich/<%= active.hash %>" target="_blank">EnrichIt</a>
+            <a href="#" ng-click="markAsRead('<%= active.hash %>')">Done Reading</a>
+        </div>
+        </div>
+
+    </nav>
+
+    <article class="article">
+        <h1 class="article-title">{{active.description}}<%= active.description %></h1>
+        <section class="article-content" ng-bind-htm="active.text">
+            <%- active.text %>
+        </section>
+    </article>
+</body>
+</html>

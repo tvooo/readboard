@@ -12,7 +12,9 @@
     "node-pinboard": "^0.1.1",
     "readingtime": "0.0.2",
     "webshot": "^0.11.0",
-    "commander": "^2.1.0"
+    "commander": "^2.1.0",
+    "underscore": "^1.6.0",
+    "ejs": "^0.8.5"
   },
   "devDependencies": {
     "grunt-contrib-copy": "^0.5.0",
